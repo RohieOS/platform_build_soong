@@ -102,6 +102,8 @@ func makeVarsProvider(ctx android.MakeVarsContext) {
 	ctx.Strict("NDK_PREBUILT_SHARED_LIBRARIES", strings.Join(ndkPrebuiltSharedLibs, " "))
 
 	ctx.Strict("BOARD_VNDK_VERSION", ctx.DeviceConfig().VndkVersion())
+	ctx.Strict("RECOVERY_SNAPSHOT_VERSION", ctx.DeviceConfig().RecoverySnapshotVersion())
+	ctx.Strict("RAMDISK_SNAPSHOT_VERSION", ctx.DeviceConfig().RamdiskSnapshotVersion())
 
 	// Filter vendor_public_library that are exported to make
 	exportedVendorPublicLibraries := []string{}
